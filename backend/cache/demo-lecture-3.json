@@ -1,0 +1,278 @@
+{
+  "video_id": "zjkBMFhNj_g",
+  "title": "MIT 6.006: Algorithmic Thinking, Peak Finding",
+  "cached": true,
+  "summary": {
+    "tldr": "This foundational MIT lecture introduces algorithmic thinking and asymptotic complexity through the 1D and 2D Peak Finding problems. An element is a peak if it is greater than or equal to its immediate neighbors. While a naive scan in 1D requires linear O(n) time, a divide-and-conquer binary search achieves logarithmic O(log n) time. Extending this to 2D matrices, the lecture examines how naive greedy ascent requires O(n*m) worst-case time, whereas a 2D divide-and-conquer strategy solves it in O(n log m) time with rigorous correctness guarantees.",
+    "sections": [
+      {
+        "id": "sec-1",
+        "title": "1. Course Overview & Algorithmic Problem Solving",
+        "start_sec": 0,
+        "end_sec": 380,
+        "summary": "Introduction to MIT 6.006, efficiency metrics, and why algorithmic performance matters. Computational scalability cannot be solved simply by acquiring faster hardware.",
+        "key_points": [
+          {
+            "text": "Algorithms are about turning inefficient brute-force processes into scalable mathematical solutions.",
+            "timestamp_sec": 0
+          },
+          {
+            "text": "Asymptotic analysis allows comparing algorithm efficiency independent of hardware constants.",
+            "timestamp_sec": 140
+          },
+          {
+            "text": "The lecture frames peak finding as a toy problem modeling optimization in high-dimensional spaces.",
+            "timestamp_sec": 280
+          }
+        ]
+      },
+      {
+        "id": "sec-2",
+        "title": "2. One-Dimensional (1D) Peak Finding",
+        "start_sec": 380,
+        "end_sec": 920,
+        "summary": "Formal definition of a 1D peak: array element a[i] >= a[i-1] and a[i] >= a[i+1]. Comparing straightforward linear scan O(n) versus divide-and-conquer binary search O(log n).",
+        "key_points": [
+          {
+            "text": "Definition: Position i is a peak if and only if a[i] >= a[i-1] and a[i] >= a[i+1] (with boundary conditions).",
+            "timestamp_sec": 440
+          },
+          {
+            "text": "Linear scan inspects elements left-to-right, having worst-case complexity Theta(n).",
+            "timestamp_sec": 580
+          },
+          {
+            "text": "Binary search checks middle element n/2: if a[n/2] < a[n/2 - 1], recurse left; else if a[n/2] < a[n/2 + 1], recurse right; else peak found.",
+            "timestamp_sec": 720
+          },
+          {
+            "text": "Recurrence relation T(n) = T(n/2) + O(1) yields Theta(log n) runtime.",
+            "timestamp_sec": 860
+          }
+        ]
+      },
+      {
+        "id": "sec-3",
+        "title": "3. Inductive Proof of Correctness for 1D Divide and Conquer",
+        "start_sec": 920,
+        "end_sec": 1500,
+        "summary": "Why does moving towards a strictly larger neighbor always guarantee reaching a peak? The lecturer develops an invariant proof: any sub-array bounded by a strictly larger outside element must contain a local peak.",
+        "key_points": [
+          {
+            "text": "Correctness relies on the invariant that if a neighbor is strictly greater, that half must contain at least one peak.",
+            "timestamp_sec": 960
+          },
+          {
+            "text": "Base case n=1 is trivially true; inductive step guarantees termination on finite arrays.",
+            "timestamp_sec": 1180
+          },
+          {
+            "text": "For n = 10,000,000, Theta(log n) requires roughly 24 steps compared to 10 million steps for linear scan.",
+            "timestamp_sec": 1400
+          }
+        ]
+      },
+      {
+        "id": "sec-4",
+        "title": "4. Two-Dimensional (2D) Peak Finding Formulation",
+        "start_sec": 1500,
+        "end_sec": 2100,
+        "summary": "Extending the problem to an n-by-m matrix. Position (i, j) is a 2D peak if it is >= all four orthogonal neighbors (up, down, left, right). Exploring greedy ascent and its worst-case bounds.",
+        "key_points": [
+          {
+            "text": "A 2D peak requires a[i][j] >= its neighbors in north, south, east, and west directions.",
+            "timestamp_sec": 1540
+          },
+          {
+            "text": "Greedy ascent algorithm steps to the highest adjacent neighbor until reaching a local summit.",
+            "timestamp_sec": 1780
+          },
+          {
+            "text": "Greedy ascent can trace a spiral traversing nearly every entry, yielding Theta(n*m) complexity.",
+            "timestamp_sec": 1980
+          }
+        ]
+      },
+      {
+        "id": "sec-5",
+        "title": "5. 2D Divide-and-Conquer Algorithm & Flawed Heuristics",
+        "start_sec": 2100,
+        "end_sec": 2700,
+        "summary": "Demonstrating a subtle algorithmic flaw: row-by-row divide-and-conquer can cycle or fail. Introducing the correct algorithm: find global maximum of the middle column j = m/2, then recurse left or right.",
+        "key_points": [
+          {
+            "text": "Flawed approach: finding 1D peak in middle column then 1D peak in row does not guarantee a 2D peak.",
+            "timestamp_sec": 2160
+          },
+          {
+            "text": "Correct approach: find global maximum of middle column j = m/2 in O(n) time.",
+            "timestamp_sec": 2360
+          },
+          {
+            "text": "Compare this column maximum with its left and right row neighbors to choose the recursive subproblem.",
+            "timestamp_sec": 2540
+          }
+        ]
+      },
+      {
+        "id": "sec-6",
+        "title": "6. Recurrence & Complexity of 2D Divide and Conquer",
+        "start_sec": 2700,
+        "end_sec": 3080,
+        "summary": "Solving the recurrence relation T(n, m) = T(n, m/2) + O(n). Proving that the algorithm takes O(n log m) time, vastly superior to Theta(n*m).",
+        "key_points": [
+          {
+            "text": "Recurrence equation: T(n, m) = T(n, m/2) + Theta(n), where Theta(n) is the cost of scanning one column.",
+            "timestamp_sec": 2780
+          },
+          {
+            "text": "Sum of geometric levels yields overall time complexity of Theta(n log m).",
+            "timestamp_sec": 2940
+          },
+          {
+            "text": "Algorithmic design transforms an intractable computation into an instantaneous result.",
+            "timestamp_sec": 3040
+          }
+        ]
+      }
+    ]
+  },
+  "flashcards": [
+    {
+      "id": "fc-1",
+      "front": "What defines a peak in a one-dimensional array of numbers?",
+      "back": "An element a[i] is a peak if it is greater than or equal to both its immediate neighbors: a[i] >= a[i-1] and a[i] >= a[i+1].",
+      "timestamp_sec": 440,
+      "difficulty": "easy",
+      "tags": ["definitions", "1d-peak"]
+    },
+    {
+      "id": "fc-2",
+      "front": "What is the worst-case time complexity of finding a 1D peak using binary search?",
+      "back": "Theta(log n), governed by recurrence T(n) = T(n/2) + Theta(1).",
+      "timestamp_sec": 860,
+      "difficulty": "easy",
+      "tags": ["asymptotics", "complexity"]
+    },
+    {
+      "id": "fc-3",
+      "front": "What is the worst-case time complexity of greedy ascent for 2D peak finding on an n x m matrix?",
+      "back": "Theta(n * m), because the path can spiral through every cell before hitting a local peak.",
+      "timestamp_sec": 1980,
+      "difficulty": "medium",
+      "tags": ["greedy", "worst-case"]
+    },
+    {
+      "id": "fc-4",
+      "front": "In the correct 2D divide-and-conquer peak finding algorithm, how is the middle column processed?",
+      "back": "Find the GLOBAL maximum element along the entire middle column j = m/2 in Theta(n) time.",
+      "timestamp_sec": 2360,
+      "difficulty": "medium",
+      "tags": ["divide-conquer", "matrix"]
+    },
+    {
+      "id": "fc-5",
+      "front": "What is the recurrence relation for the correct 2D peak finding algorithm?",
+      "back": "T(n, m) = T(n, m/2) + Theta(n), which resolves to Theta(n log m).",
+      "timestamp_sec": 2780,
+      "difficulty": "hard",
+      "tags": ["recurrence", "math"]
+    },
+    {
+      "id": "fc-6",
+      "front": "Why is finding a 1D peak on the middle row and then 1D peak on the middle column flawed for 2D?",
+      "back": "A 1D peak along a single row does not consider vertical neighbors; when you switch to the column, the 2D peak property in the row can be violated.",
+      "timestamp_sec": 2160,
+      "difficulty": "hard",
+      "tags": ["counterexamples", "correctness"]
+    },
+    {
+      "id": "fc-7",
+      "front": "Does a non-empty array of real numbers always contain at least one peak?",
+      "back": "Yes. By the well-ordering principle / finiteness, the global maximum of the array is always guaranteed to be a peak.",
+      "timestamp_sec": 960,
+      "difficulty": "easy",
+      "tags": ["proofs", "invariants"]
+    },
+    {
+      "id": "fc-8",
+      "front": "For an array with n = 10,000,000 elements, approximately how many comparisons does 1D binary search make?",
+      "back": "Approximately log2(10^7) approx 24 comparisons.",
+      "timestamp_sec": 1400,
+      "difficulty": "medium",
+      "tags": ["practical-speed", "logarithms"]
+    }
+  ],
+  "quiz": [
+    {
+      "id": "qz-1",
+      "question": "Which recurrence relation describes the 1D binary search peak finding algorithm?",
+      "options": [
+        "T(n) = 2T(n/2) + O(1)",
+        "T(n) = T(n/2) + O(1)",
+        "T(n) = T(n-1) + O(1)",
+        "T(n) = T(n/2) + O(n)"
+      ],
+      "correct_index": 1,
+      "explanation": "At each step, checking neighbors takes O(1) time and reduces the problem to exactly one subproblem of size n/2, so T(n) = T(n/2) + O(1).",
+      "timestamp_sec": 860,
+      "difficulty": "easy"
+    },
+    {
+      "id": "qz-2",
+      "question": "In 1D peak finding, if a[n/2] < a[n/2 - 1], why is it mathematically safe to discard the right half of the array?",
+      "options": [
+        "The right half cannot contain any positive numbers",
+        "The left half is proven to contain at least one local peak by the invariant argument",
+        "The array is sorted in descending order",
+        "It is only a heuristic and could fail on odd-length arrays"
+      ],
+      "correct_index": 1,
+      "explanation": "Because a[n/2 - 1] > a[n/2], walking leftwards either encounters a point where values stop increasing (yielding a peak) or reaches the left boundary a[0], which then becomes a peak.",
+      "timestamp_sec": 960,
+      "difficulty": "medium"
+    },
+    {
+      "id": "qz-3",
+      "question": "What is the time complexity of the correct 2D divide-and-conquer peak finding algorithm on an n x m matrix?",
+      "options": [
+        "Theta(n * m)",
+        "Theta(log n * log m)",
+        "Theta(n * log m)",
+        "Theta(n^2)"
+      ],
+      "correct_index": 2,
+      "explanation": "Finding the global maximum of a column takes Theta(n), halved across log m column divisions, giving Theta(n log m).",
+      "timestamp_sec": 2940,
+      "difficulty": "medium"
+    },
+    {
+      "id": "qz-4",
+      "question": "Why does greedy ascent have worst-case complexity Theta(n*m) on a 2D matrix?",
+      "options": [
+        "It evaluates all matrix entries simultaneously using dynamic programming",
+        "A malicious matrix can force a snake/spiral traversal passing through almost every entry",
+        "Greedy ascent requires matrix inversion at each step",
+        "It recursively calculates determinants of submatrices"
+      ],
+      "correct_index": 1,
+      "explanation": "A carefully arranged spiral of monotonically increasing values forces greedy ascent to walk every single cell before finding the peak.",
+      "timestamp_sec": 1980,
+      "difficulty": "hard"
+    },
+    {
+      "id": "qz-5",
+      "question": "What is the core takeaway regarding hardware speed vs. algorithmic asymptotic efficiency?",
+      "options": [
+        "Faster hardware eliminates the need for sub-quadratic algorithms",
+        "An asymptotically superior algorithm will inevitably outperform an inefficient one as input size n grows, regardless of constant hardware factors",
+        "O(n^2) algorithms run faster than O(n log n) algorithms on multi-core CPUs",
+        "Algorithmic complexity only matters when memory is less than 1 Gigabyte"
+      ],
+      "correct_index": 1,
+      "explanation": "Asymptotic growth rates dominate hardware constants as problem size expands; an O(log n) algorithm on a slow computer crushes an O(n) algorithm on a supercomputer for large n.",
+      "timestamp_sec": 140,
+      "difficulty": "easy"
+    }
+  ]
+}

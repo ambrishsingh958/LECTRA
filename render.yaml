@@ -1,0 +1,14 @@
+services:
+  - type: web
+    name: lectra-backend
+    env: python
+    rootDir: backend
+    buildCommand: pip install -r requirements.txt
+    startCommand: uvicorn main:app --host 0.0.0.0 --port $PORT
+    envVars:
+      - key: GEMINI_API_KEY
+        sync: false
+      - key: FRONTEND_ORIGIN
+        value: https://lectra.vercel.app
+      - key: PORT
+        value: 10000

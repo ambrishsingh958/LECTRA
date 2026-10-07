@@ -1,0 +1,97 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "StudyKit",
+  "type": "object",
+  "required": ["video_id", "title", "summary", "flashcards", "quiz"],
+  "properties": {
+    "video_id": {
+      "type": "string"
+    },
+    "title": {
+      "type": "string"
+    },
+    "summary": {
+      "type": "object",
+      "required": ["tldr", "sections"],
+      "properties": {
+        "tldr": {
+          "type": "string"
+        },
+        "sections": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["id", "title", "start_sec", "end_sec", "summary", "key_points"],
+            "properties": {
+              "id": { "type": "string" },
+              "title": { "type": "string" },
+              "start_sec": { "type": "number", "minimum": 0 },
+              "end_sec": { "type": "number", "minimum": 0 },
+              "summary": { "type": "string" },
+              "key_points": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "required": ["text", "timestamp_sec"],
+                  "properties": {
+                    "text": { "type": "string" },
+                    "timestamp_sec": { "type": "number", "minimum": 0 }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "flashcards": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "front", "back", "timestamp_sec", "difficulty", "tags"],
+        "properties": {
+          "id": { "type": "string" },
+          "front": { "type": "string" },
+          "back": { "type": "string" },
+          "timestamp_sec": { "type": "number", "minimum": 0 },
+          "difficulty": {
+            "type": "string",
+            "enum": ["easy", "medium", "hard"]
+          },
+          "tags": {
+            "type": "array",
+            "items": { "type": "string" }
+          }
+        }
+      }
+    },
+    "quiz": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "question", "options", "correct_index", "explanation", "timestamp_sec", "difficulty"],
+        "properties": {
+          "id": { "type": "string" },
+          "question": { "type": "string" },
+          "options": {
+            "type": "array",
+            "minItems": 4,
+            "maxItems": 4,
+            "items": { "type": "string" }
+          },
+          "correct_index": {
+            "type": "integer",
+            "minimum": 0,
+            "maximum": 3
+          },
+          "explanation": { "type": "string" },
+          "timestamp_sec": { "type": "number", "minimum": 0 },
+          "difficulty": {
+            "type": "string",
+            "enum": ["easy", "medium", "hard"]
+          }
+        }
+      }
+    }
+  }
+}

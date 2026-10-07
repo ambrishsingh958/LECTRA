@@ -1,0 +1,249 @@
+{
+  "video_id": "wjZofJX0v4U",
+  "title": "But what is a neural network? | Chapter 1, Deep Learning",
+  "cached": true,
+  "summary": {
+    "tldr": "Neural networks are layered mathematical models inspired loosely by biological brains, designed here to classify handwritten digits (MNIST dataset). Each neuron in a layer holds an activation number between 0 and 1. Signals propagate forward as linear combinations of previous activations multiplied by weights plus a bias, passed through an activation function (like sigmoid or ReLU). Layer by layer, the network transforms raw pixel inputs into high-level geometric abstractions.",
+    "sections": [
+      {
+        "id": "sec-1",
+        "title": "1. What is a Neuron & The MNIST Digit Task",
+        "start_sec": 0,
+        "end_sec": 180,
+        "summary": "Setting the stage with handwritten digit recognition. A 28x28 pixel grayscale image gives 784 input neurons whose activations represent brightness from 0.0 (black) to 1.0 (white).",
+        "key_points": [
+          {
+            "text": "A neuron in deep learning is simply a container holding a real number (activation value).",
+            "timestamp_sec": 0
+          },
+          {
+            "text": "Input layer consists of 784 neurons corresponding to each pixel in a 28x28 image grid.",
+            "timestamp_sec": 40
+          },
+          {
+            "text": "The output layer consists of 10 neurons, each representing confidence in digits 0 through 9.",
+            "timestamp_sec": 140
+          }
+        ]
+      },
+      {
+        "id": "sec-2",
+        "title": "2. Hidden Layers & Hierarchical Feature Detection",
+        "start_sec": 180,
+        "end_sec": 420,
+        "summary": "Exploring the role of hidden layers. Instead of memorizing full images, the network is hypothesized to assemble complex digits from subcomponents: pixels form edges, edges form loops and strokes, and strokes form whole digits.",
+        "key_points": [
+          {
+            "text": "Hidden layers serve as intermediate representations between raw pixels and final predictions.",
+            "timestamp_sec": 190
+          },
+          {
+            "text": "Layer 2 might detect small edges and line segments from grouped pixels.",
+            "timestamp_sec": 280
+          },
+          {
+            "text": "Layer 3 combines simple edges into composite shapes like loops, vertical strokes, or crossbars.",
+            "timestamp_sec": 360
+          }
+        ]
+      },
+      {
+        "id": "sec-3",
+        "title": "3. Weights, Biases, and Activation Functions",
+        "start_sec": 420,
+        "end_sec": 720,
+        "summary": "The core mathematical mechanism. Every connection between neurons has an assigned weight. Activations are calculated as weighted sums plus a bias, squished into a bounded range via the sigmoid function.",
+        "key_points": [
+          {
+            "text": "Weights quantify how strongly one neuron influences another; positive excites, negative inhibits.",
+            "timestamp_sec": 440
+          },
+          {
+            "text": "The bias term shifts the activation threshold, deciding how active the weighted sum must be to fire.",
+            "timestamp_sec": 540
+          },
+          {
+            "text": "Sigmoid function squashes values between 0 and 1: sigma(x) = 1 / (1 + e^(-x)).",
+            "timestamp_sec": 640
+          }
+        ]
+      },
+      {
+        "id": "sec-4",
+        "title": "4. Matrix Notation & Vectorized Forward Propagation",
+        "start_sec": 720,
+        "end_sec": 980,
+        "summary": "Formulating neural calculations cleanly using linear algebra. Weights become matrices (W), activations and biases become vectors (a, b), yielding the compact equation: a_next = sigma(W * a_prev + b).",
+        "key_points": [
+          {
+            "text": "Organizing weights into a weight matrix W allows computing whole layer activations in one matrix multiplication.",
+            "timestamp_sec": 760
+          },
+          {
+            "text": "Vector equation a^(l) = sigma(W^(l) * a^(l-1) + b^(l)) standardizes forward propagation.",
+            "timestamp_sec": 840
+          },
+          {
+            "text": "Modern hardware (GPUs) is specifically optimized to perform millions of these matrix products in parallel.",
+            "timestamp_sec": 920
+          }
+        ]
+      },
+      {
+        "id": "sec-5",
+        "title": "5. Beyond Biological Metaphors: The High-Dimensional Function",
+        "start_sec": 980,
+        "end_sec": 1150,
+        "summary": "De-mystifying artificial neural networks. Rather than true synthetic brains, neural networks are gigantic parameterizable mathematical functions that map a 784-dimensional input space to a 10-dimensional probability distribution.",
+        "key_points": [
+          {
+            "text": "A neural network is fundamentally a function: takes 784 numbers as input and outputs 10 numbers.",
+            "timestamp_sec": 1000
+          },
+          {
+            "text": "With 13,002 parameters (weights + biases), the learning process tunes these dials to minimize error.",
+            "timestamp_sec": 1080
+          }
+        ]
+      }
+    ]
+  },
+  "flashcards": [
+    {
+      "id": "fc-1",
+      "front": "What does an individual neuron represent in the context of the MNIST input layer?",
+      "back": "A single pixel in the 28x28 image grid, whose activation value encodes grayscale brightness from 0.0 to 1.0.",
+      "timestamp_sec": 40,
+      "difficulty": "easy",
+      "tags": ["mnist", "inputs"]
+    },
+    {
+      "id": "fc-2",
+      "front": "What is the role of a 'weight' in a feedforward neural network?",
+      "back": "It determines the strength and sign (positive excitation or negative inhibition) of the connection between two neurons.",
+      "timestamp_sec": 440,
+      "difficulty": "easy",
+      "tags": ["weights", "parameters"]
+    },
+    {
+      "id": "fc-3",
+      "front": "Why is a 'bias' added to the weighted sum of inputs?",
+      "back": "Bias allows shifting the activation curve, controlling the threshold baseline at which a neuron fires regardless of inputs.",
+      "timestamp_sec": 540,
+      "difficulty": "medium",
+      "tags": ["bias", "mathematics"]
+    },
+    {
+      "id": "fc-4",
+      "front": "What is the mathematical definition of the Sigmoid activation function?",
+      "back": "sigma(z) = 1 / (1 + e^(-z)), which maps any real number into the open interval (0, 1).",
+      "timestamp_sec": 640,
+      "difficulty": "medium",
+      "tags": ["activation-functions", "sigmoid"]
+    },
+    {
+      "id": "fc-5",
+      "front": "What is the vectorized formula for computing the activations of layer l from layer l-1?",
+      "back": "a^(l) = sigma( W^(l) * a^(l-1) + b^(l) ), where W is the weight matrix and b is the bias vector.",
+      "timestamp_sec": 840,
+      "difficulty": "hard",
+      "tags": ["linear-algebra", "matrices"]
+    },
+    {
+      "id": "fc-6",
+      "front": "Why are GPUs essential for deep learning computations?",
+      "back": "GPUs possess thousands of cores optimized for parallel matrix multiplications and additions required by layer activations.",
+      "timestamp_sec": 920,
+      "difficulty": "easy",
+      "tags": ["hardware", "gpus"]
+    },
+    {
+      "id": "fc-7",
+      "front": "What is the total number of weights and biases in the discussed 784 -> 16 -> 16 -> 10 network?",
+      "back": "13,002 parameters ((784*16 + 16) + (16*16 + 16) + (16*10 + 10)).",
+      "timestamp_sec": 1080,
+      "difficulty": "hard",
+      "tags": ["architecture", "parameters"]
+    },
+    {
+      "id": "fc-8",
+      "front": "What do the 10 neurons in the final output layer signify?",
+      "back": "The model's predicted likelihood or confidence scores for the digits 0, 1, 2, ..., 9.",
+      "timestamp_sec": 140,
+      "difficulty": "easy",
+      "tags": ["classification", "output"]
+    }
+  ],
+  "quiz": [
+    {
+      "id": "qz-1",
+      "question": "For a grayscale 28x28 pixel image fed into a standard feedforward network, how many input neurons are needed?",
+      "options": [
+        "28 neurons",
+        "256 neurons",
+        "784 neurons",
+        "1024 neurons"
+      ],
+      "correct_index": 2,
+      "explanation": "28 multiplied by 28 equals 784 pixels, each mapped to one input neuron in the flattened input layer.",
+      "timestamp_sec": 40,
+      "difficulty": "easy"
+    },
+    {
+      "id": "qz-2",
+      "question": "What is the primary effect of a negative weight connecting neuron A to neuron B?",
+      "options": [
+        "High activation in A decreases the weighted sum, inhibiting neuron B",
+        "It forces neuron B's activation to be zero regardless of other inputs",
+        "It inverts the direction of backpropagation flow",
+        "It multiplies neuron B's bias by -1"
+      ],
+      "correct_index": 0,
+      "explanation": "A negative weight penalizes or inhibits the target neuron when the source neuron is highly active.",
+      "timestamp_sec": 440,
+      "difficulty": "medium"
+    },
+    {
+      "id": "qz-3",
+      "question": "Which mathematical equation represents forward propagation for layer l?",
+      "options": [
+        "a^(l) = W^(l) + a^(l-1) * b^(l)",
+        "a^(l) = sigma( W^(l) * a^(l-1) + b^(l) )",
+        "a^(l) = (W^(l) * b^(l)) / a^(l-1)",
+        "a^(l) = sigma( W^(l) + b^(l) )"
+      ],
+      "correct_index": 1,
+      "explanation": "Activations are calculated by multiplying the weight matrix W by previous activations vector a, adding bias vector b, and applying non-linear activation sigma.",
+      "timestamp_sec": 840,
+      "difficulty": "medium"
+    },
+    {
+      "id": "qz-4",
+      "question": "If a neuron's weighted sum of inputs is 0, what is its activation when using the standard sigmoid function?",
+      "options": [
+        "-1.0",
+        "0.0",
+        "0.5",
+        "1.0"
+      ],
+      "correct_index": 2,
+      "explanation": "sigma(0) = 1 / (1 + e^0) = 1 / (1 + 1) = 0.5.",
+      "timestamp_sec": 640,
+      "difficulty": "hard"
+    },
+    {
+      "id": "qz-5",
+      "question": "Fundamentally, what is an artificial neural network in mathematical terms?",
+      "options": [
+        "A biological reproduction of human cortical columns",
+        "A high-dimensional parameterizable mathematical function",
+        "A database retrieval system indexing training examples",
+        "A stochastic hardware circuit simulator"
+      ],
+      "correct_index": 1,
+      "explanation": "Mathematically, a neural network is a high-dimensional function that transforms input vectors into output vectors via thousands of tunable scalar parameters.",
+      "timestamp_sec": 1000,
+      "difficulty": "easy"
+    }
+  ]
+}

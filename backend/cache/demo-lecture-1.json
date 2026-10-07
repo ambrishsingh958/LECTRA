@@ -1,0 +1,249 @@
+{
+  "video_id": "g78utcLQrJ4",
+  "title": "Photosynthesis and the Teeny Tiny Pigment Pancakes",
+  "cached": true,
+  "summary": {
+    "tldr": "Photosynthesis is the fundamental biochemical process whereby plants, algae, and cyanobacteria convert solar light energy, carbon dioxide, and water into glucose and oxygen. It occurs inside chloroplasts and consists of two tightly coupled stages: the light-dependent reactions within the thylakoid membranes (generating ATP and NADPH while releasing oxygen from photolysis) and the light-independent Calvin cycle in the stroma (fixing CO2 into high-energy carbohydrates).",
+    "sections": [
+      {
+        "id": "sec-1",
+        "title": "1. What is Photosynthesis & Why It Matters",
+        "start_sec": 0,
+        "end_sec": 80,
+        "summary": "Introduction to autotrophic organisms and the vital role of photosynthesis in sustaining Earth's biosphere. Solar energy drives the chemical synthesis of organic sugars that fuel virtually all food webs.",
+        "key_points": [
+          {
+            "text": "Autotrophs make their own food using light, carbon dioxide, and water.",
+            "timestamp_sec": 0
+          },
+          {
+            "text": "The overall chemical formula: 6 CO2 + 6 H2O + light -> C6H12O6 + 6 O2.",
+            "timestamp_sec": 40
+          },
+          {
+            "text": "Oxygen produced during photosynthesis is released into the atmosphere as a byproduct.",
+            "timestamp_sec": 40
+          }
+        ]
+      },
+      {
+        "id": "sec-2",
+        "title": "2. Chloroplast Anatomy & Pigments",
+        "start_sec": 80,
+        "end_sec": 160,
+        "summary": "Exploring the microscopic structure of plant leaves and chloroplast organelles. Chlorophyll pigments sit embedded within disc-shaped thylakoids (organized in granum stacks) bathed in liquid stroma.",
+        "key_points": [
+          {
+            "text": "Chloroplasts contain disc-like thylakoids stacked together into structures called grana.",
+            "timestamp_sec": 90
+          },
+          {
+            "text": "Chlorophyll pigments absorb blue and red wavelengths while reflecting green light.",
+            "timestamp_sec": 140
+          },
+          {
+            "text": "The fluid surrounding the thylakoid membranes is called the stroma.",
+            "timestamp_sec": 140
+          }
+        ]
+      },
+      {
+        "id": "sec-3",
+        "title": "3. The Light-Dependent Reactions",
+        "start_sec": 160,
+        "end_sec": 280,
+        "summary": "Detailed breakdown of the light reactions taking place in the thylakoid membranes. Photons split water molecules (photolysis) to power electron transport chains, charging ADP into ATP and NADP+ into NADPH.",
+        "key_points": [
+          {
+            "text": "Light reactions occur strictly inside the thylakoid membranes where light is trapped.",
+            "timestamp_sec": 190
+          },
+          {
+            "text": "Water molecules (H2O) are split through photolysis, releasing oxygen gas.",
+            "timestamp_sec": 230
+          },
+          {
+            "text": "Electron transport drives ATP synthase and generates NADPH energy carriers.",
+            "timestamp_sec": 270
+          }
+        ]
+      },
+      {
+        "id": "sec-4",
+        "title": "4. The Light-Independent Calvin Cycle",
+        "start_sec": 280,
+        "end_sec": 400,
+        "summary": "Analysis of the dark reactions in the stroma. The enzyme RuBisCO fixes carbon dioxide from the air, utilizing ATP and NADPH from the light reactions to synthesize glucose molecules.",
+        "key_points": [
+          {
+            "text": "The Calvin cycle takes place in the fluid stroma and does not require direct light.",
+            "timestamp_sec": 280
+          },
+          {
+            "text": "Enzyme RuBisCO catalyzes carbon fixation by binding atmospheric CO2.",
+            "timestamp_sec": 320
+          },
+          {
+            "text": "Chemical energy from ATP and NADPH transforms fixed carbon into glucose (C6H12O6).",
+            "timestamp_sec": 360
+          }
+        ]
+      },
+      {
+        "id": "sec-5",
+        "title": "5. Synthesis & Cellular Respiration Connection",
+        "start_sec": 400,
+        "end_sec": 465,
+        "summary": "Synthesizing the cycle: plants don't just produce glucose for animals, they also consume it through cellular respiration inside their own mitochondria to generate cellular work.",
+        "key_points": [
+          {
+            "text": "Plants contain both chloroplasts and mitochondria to break down their own sugars.",
+            "timestamp_sec": 400
+          },
+          {
+            "text": "Glucose is stored long-term as starch or incorporated into cellulose plant walls.",
+            "timestamp_sec": 440
+          }
+        ]
+      }
+    ]
+  },
+  "flashcards": [
+    {
+      "id": "fc-1",
+      "front": "What is the primary organelle responsible for photosynthesis in plant cells?",
+      "back": "The chloroplast, a double-membraned plastid containing chlorophyll-rich thylakoid disks.",
+      "timestamp_sec": 90,
+      "difficulty": "easy",
+      "tags": ["anatomy", "organelles"]
+    },
+    {
+      "id": "fc-2",
+      "front": "Where do the light-dependent reactions take place within the chloroplast?",
+      "back": "Across the thylakoid membranes (stacked into structures called grana).",
+      "timestamp_sec": 190,
+      "difficulty": "medium",
+      "tags": ["light-reactions", "thylakoid"]
+    },
+    {
+      "id": "fc-3",
+      "front": "What molecules are produced by the light-dependent reactions to power the Calvin cycle?",
+      "back": "ATP and NADPH (along with oxygen gas released as a byproduct).",
+      "timestamp_sec": 270,
+      "difficulty": "medium",
+      "tags": ["biochemistry", "energy"]
+    },
+    {
+      "id": "fc-4",
+      "front": "What is the function of the fluid stroma in the chloroplast?",
+      "back": "It houses the enzymes (especially RuBisCO) required for the light-independent Calvin cycle.",
+      "timestamp_sec": 280,
+      "difficulty": "easy",
+      "tags": ["stroma", "calvin-cycle"]
+    },
+    {
+      "id": "fc-5",
+      "front": "Why do plants appear green to the human eye?",
+      "back": "Chlorophyll pigments absorb blue and red wavelengths of light while reflecting green wavelengths.",
+      "timestamp_sec": 140,
+      "difficulty": "easy",
+      "tags": ["pigments", "optics"]
+    },
+    {
+      "id": "fc-6",
+      "front": "What key enzyme catalyzes carbon dioxide fixation in the Calvin cycle?",
+      "back": "RuBisCO (Ribulose-1,5-bisphosphate carboxylase-oxygenase).",
+      "timestamp_sec": 320,
+      "difficulty": "hard",
+      "tags": ["enzymes", "carbon-fixation"]
+    },
+    {
+      "id": "fc-7",
+      "front": "What is the origin of the oxygen (O2) gas released during photosynthesis?",
+      "back": "It originates from water molecules (H2O) split during photolysis in Photosystem II.",
+      "timestamp_sec": 230,
+      "difficulty": "hard",
+      "tags": ["photolysis", "water"]
+    },
+    {
+      "id": "fc-8",
+      "front": "Do plants also undergo cellular respiration?",
+      "back": "Yes. Plants possess mitochondria and break down synthesized glucose into ATP for cellular processes.",
+      "timestamp_sec": 400,
+      "difficulty": "medium",
+      "tags": ["respiration", "metabolism"]
+    }
+  ],
+  "quiz": [
+    {
+      "id": "qz-1",
+      "question": "Which of the following is the balanced overall chemical equation for oxygenic photosynthesis?",
+      "options": [
+        "6 CO2 + 6 H2O + light -> C6H12O6 + 6 O2",
+        "C6H12O6 + 6 O2 -> 6 CO2 + 6 H2O + ATP",
+        "CO2 + 2 H2O + light -> CH2O + O2 + H2O",
+        "6 CO2 + 12 H2O -> C6H12O6 + 6 H2O + 6 O2"
+      ],
+      "correct_index": 0,
+      "explanation": "Photosynthesis uses 6 molecules of carbon dioxide and 6 molecules of water with light energy to yield 1 glucose molecule and 6 oxygen molecules.",
+      "timestamp_sec": 40,
+      "difficulty": "easy"
+    },
+    {
+      "id": "qz-2",
+      "question": "What happens during photolysis in the thylakoid membrane?",
+      "options": [
+        "Carbon dioxide is converted directly into pyruvate",
+        "Water molecules are split into electrons, protons, and oxygen gas",
+        "Glucose is oxidized to release carbon dioxide",
+        "Chlorophyll molecules are degraded by intense ultraviolet radiation"
+      ],
+      "correct_index": 1,
+      "explanation": "Photolysis splits water (H2O) to replenish electrons lost by excited chlorophyll in Photosystem II, releasing molecular oxygen as a byproduct.",
+      "timestamp_sec": 230,
+      "difficulty": "medium"
+    },
+    {
+      "id": "qz-3",
+      "question": "Where does the Calvin cycle (light-independent reaction) occur?",
+      "options": [
+        "Thylakoid lumen",
+        "Inner mitochondrial matrix",
+        "Stroma of the chloroplast",
+        "Intermembrane space of the leaf epidermis"
+      ],
+      "correct_index": 2,
+      "explanation": "The Calvin cycle takes place in the aqueous stroma surrounding the thylakoid stacks, where soluble carbon fixation enzymes reside.",
+      "timestamp_sec": 280,
+      "difficulty": "easy"
+    },
+    {
+      "id": "qz-4",
+      "question": "Which two energy-rich products from the light reactions are required by the Calvin cycle?",
+      "options": [
+        "Glucose and FADH2",
+        "Pyruvate and NADH",
+        "ATP and NADPH",
+        "Oxygen and ADP"
+      ],
+      "correct_index": 2,
+      "explanation": "The light reactions store solar energy into chemical bonds of ATP (via chemiosmosis) and NADPH (reducing power), which drive the Calvin cycle.",
+      "timestamp_sec": 270,
+      "difficulty": "medium"
+    },
+    {
+      "id": "qz-5",
+      "question": "Which enzyme responsible for carbon fixation is considered one of the most abundant proteins on Earth?",
+      "options": [
+        "ATP Synthase",
+        "RuBisCO",
+        "DNA Polymerase III",
+        "Phosphofructokinase"
+      ],
+      "correct_index": 1,
+      "explanation": "RuBisCO fixes carbon dioxide onto RuBP and constitutes up to 50% of soluble leaf protein due to its relatively slow turnover rate.",
+      "timestamp_sec": 320,
+      "difficulty": "hard"
+    }
+  ]
+}
